@@ -15,7 +15,6 @@ public class ChangeDaytime : MonoBehaviour
     public Sprite eveningImage;
     public Sprite nightImage;
 
-    int counting = 0;
     public bool ready = false;
     public bool ready2 = false;
     public float alphaBCKP;
@@ -23,7 +22,7 @@ public class ChangeDaytime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    backgroundImage.material.color = new Color(1, 1, 1, 1);
+    backgroundImage.material.color = new Color(1, 1, 1, 1); //По дефолту устанавливаем прозрачность на 1, чтобы было видно
     
 
     }
@@ -42,7 +41,7 @@ public class ChangeDaytime : MonoBehaviour
         }
     }
 
-    public void ChangeDayTime()
+    public void ChangeDayTime() //Смена картинок (спрайтов)
     {
         if (backgroundImage.sprite == morningImage)
             backgroundImage.sprite = dayImage;
@@ -60,50 +59,33 @@ public class ChangeDaytime : MonoBehaviour
     }
 
     public void DayTimeAnimation(){
-    StartCoroutine(FadeOut());
+    StartCoroutine(FadeOut()); //Затухаем картинку
 
     }
 
 
-    IEnumerator FadeOut()
+    IEnumerator FadeOut() //Затухание картинки
 {
     Color c = backgroundImage.material.color;
     for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
     {
         c.a = alpha;
         backgroundImage.material.color = c;
-        if (alpha > .2f){
-            ready2 = true;
-            //Debug.Log("FadeOut" + ready2);
-        }
-        else{
-            ready2 = false;
-        }
-        alphaBCKP = c.a;
-        //Debug.Log(alphaBCKP);
+        alphaBCKP = c.a; //Сохраняем значение прозрачности, чтобы с такой же прозрачности начинала появлялась картинка
         yield return new WaitForSeconds(0.02f);
     }
     // После завершения исчезновения, передайте alphaBCKP в FadeIn
-    StartCoroutine(FadeIn(alphaBCKP));
-    ChangeDayTime();
+    StartCoroutine(FadeIn(alphaBCKP)); //Появляем картинку
+    ChangeDayTime(); //Меняем картинку
 }
 
-    IEnumerator FadeIn(float alphaBCKP)
+    IEnumerator FadeIn(float alphaBCKP) //Появление картинки
 {
     Color c = backgroundImage.material.color;
-    Debug.Log("Я перед циклом");
     for (float alpha = alphaBCKP; alpha <= 1f; alpha += 0.1f)
     {
         c.a = alpha;
         backgroundImage.material.color = c;
-        if (alpha >= 0.9f){
-            ready = true;
-            Debug.Log("FadeIN" + ready);
-        }
-        else{
-            ready = false;
-            Debug.Log("FadeIN" + ready);
-        }
         yield return new WaitForSeconds(0.02f);
     }
     }
