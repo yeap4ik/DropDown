@@ -22,6 +22,7 @@ public class ChangeDaytime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     backgroundImage.material.color = new Color(1, 1, 1, 1); //По дефолту устанавливаем прозрачность на 1, чтобы было видно
     
 
@@ -30,14 +31,20 @@ public class ChangeDaytime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ObjectFalling.PlayerScore == 1 && ready == false){ // Костыль для того, чтобы менять картинку в зависимости от счёта
+            ready = true;
+            DayTimeAnimation(); 
+        }
+ 
+
         if (Input.GetKeyDown("f"))
         {
-        StartCoroutine(FadeOut());
+            StartCoroutine(FadeOut());
         }
 
         if (Input.GetKeyDown("g"))
         {
-        StartCoroutine(FadeIn(alphaBCKP));
+            StartCoroutine(FadeIn(alphaBCKP));
         }
     }
 
@@ -59,7 +66,7 @@ public class ChangeDaytime : MonoBehaviour
     }
 
     public void DayTimeAnimation(){
-    StartCoroutine(FadeOut()); //Затухаем картинку
+            StartCoroutine(FadeOut()); //Затухаем картинку
 
     }
 
@@ -89,6 +96,8 @@ public class ChangeDaytime : MonoBehaviour
         yield return new WaitForSeconds(0.02f);
     }
     }
+
+   
 
 
 
