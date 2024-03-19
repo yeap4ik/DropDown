@@ -4,29 +4,21 @@ using UnityEngine;
 
 public class PearSpawnController : MonoBehaviour
 {
-    public GameObject pearPrefab;
-    public ObjectFalling PlayerScoreObjectFalling; //Подключаем скрипт счёта
-    // Start is called before the first frame update
-
-    int PlayerScore123;
-
-    
-
+    int PlayerScore123 = 0;
     void Start()
     {
     
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerScore123 = ObjectFalling.PlayerScore;
+        PlayerScore123 = ObjectFalling.PlayerScore; //По скольку там что-то типо глобальной переменной, её спокойно можно считать из друго скрипта
     }
 
     public void DifficultLevelController() //Получаем счёт из другого скрипта
     {
-            Debug.Log("СчётNEW: " + PlayerScore123);
+            Debug.Log("СчётNEW: " + (PlayerScore123 = PlayerScore123 + 1));
 
 
         if (PlayerScore123 == 3)

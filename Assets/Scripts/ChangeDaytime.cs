@@ -16,7 +16,6 @@ public class ChangeDaytime : MonoBehaviour
     public Sprite nightImage;
 
     public bool ready = false;
-    public bool ready2 = false;
     public float alphaBCKP;
 
     // Start is called before the first frame update

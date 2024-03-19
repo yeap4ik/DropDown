@@ -458,17 +458,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352735692}
   m_CullTransparentMesh: 1
---- !u!114 &376771248 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 415089957950667502, guid: bbf437904965a4d4486e73c1c4e9c67a, type: 3}
-  m_PrefabInstance: {fileID: 3657365895827102922}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab38db15ffe4c8f4faa01e3993d7f841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &486253028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1084,6 @@ GameObject:
   - component: {fileID: 1514402921}
   - component: {fileID: 1514402923}
   - component: {fileID: 1514402924}
-  - component: {fileID: 1514402925}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1227,28 +1215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4323015798c6a94bb77660b3bea7d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerScoreObjectFalling: {fileID: 376771248}
-  PlayerScore123: 0
---- !u!114 &1514402925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514402920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc166b02bb9f8a4c81e0cde65d701b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundImage: {fileID: 0}
-  morningImage: {fileID: 0}
-  dayImage: {fileID: 0}
-  eveningImage: {fileID: 0}
-  nightImage: {fileID: 0}
-  ready: 0
-  ready2: 0
-  alphaBCKP: 0
 --- !u!1 &1574809146
 GameObject:
   m_ObjectHideFlags: 0
